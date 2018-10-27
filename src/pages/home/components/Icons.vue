@@ -98,6 +98,8 @@ export default {
         background: #00afbecc
     .wrapper >>> .swiper-pagination-bullets
         bottom: -.1rem
+    .wrapper >>> .swiper-container
+        overflow: unset
     .wrapper
         width: 100%
         height: 0
