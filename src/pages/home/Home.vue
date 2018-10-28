@@ -5,7 +5,9 @@
         <home-icons></home-icons>
         <home-tools></home-tools>
         <home-activities></home-activities>
-        123
+        <home-hotmeau></home-hotmeau>
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br />
     </div>
 </template>
 
@@ -15,6 +17,7 @@ import HomeSwiper from './components/Swiper'
 import HomeIcons from './components/Icons'
 import HomeTools from './components/SmallTools'
 import HomeActivities from './components/Activities'
+import HomeHotmeau from './components/HotMenu'
 export default {
     name: 'home',
     components: {
@@ -22,7 +25,8 @@ export default {
         HomeSwiper,
         HomeIcons,
         HomeTools,
-        HomeActivities
+        HomeActivities,
+        HomeHotmeau
     }
 }
 </script>
