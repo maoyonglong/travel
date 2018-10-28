@@ -105,6 +105,7 @@ export default {
         height: 0
         padding-bottom: 52%
         overflow: hidden
+        background: #fff;
         .icon 
             float: left
             width: 25%
