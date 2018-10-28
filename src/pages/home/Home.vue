@@ -6,6 +6,7 @@
         <home-tools></home-tools>
         <home-activities></home-activities>
         <home-hotmeau></home-hotmeau>
+        <home-recommend></home-recommend>
         <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
         <br /><br /><br /><br />
     </div>
@@ -18,6 +19,7 @@ import HomeIcons from './components/Icons'
 import HomeTools from './components/SmallTools'
 import HomeActivities from './components/Activities'
 import HomeHotmeau from './components/HotMenu'
+import HomeRecommend from './components/Recommend'
 export default {
     name: 'home',
     components: {
@@ -26,7 +28,8 @@ export default {
         HomeIcons,
         HomeTools,
         HomeActivities,
-        HomeHotmeau
+        HomeHotmeau,
+        HomeRecommend
     }
 }
 </script>
