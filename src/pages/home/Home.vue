@@ -4,7 +4,9 @@
         <home-swiper></home-swiper>
         <home-icons></home-icons>
         <home-tools></home-tools>
-        <p>123</p>
+        <home-hotmeau></home-hotmeau>
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br />
     </div>
 </template>
 
@@ -13,13 +15,15 @@ import HomeHeader from './components/Header'
 import HomeSwiper from './components/Swiper'
 import HomeIcons from './components/Icons'
 import HomeTools from './components/SmallTools'
+import HomeHotmeau from './components/HotMenu'
 export default {
     name: 'home',
     components: {
         HomeHeader,
         HomeSwiper,
         HomeIcons,
-        HomeTools
+        HomeTools,
+        HomeHotmeau
     }
 }
 </script>
