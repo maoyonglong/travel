@@ -4,7 +4,8 @@
         <home-swiper></home-swiper>
         <home-icons></home-icons>
         <home-tools></home-tools>
-        <p>123</p>
+        <home-activities></home-activities>
+        123
     </div>
 </template>
 
@@ -13,13 +14,15 @@ import HomeHeader from './components/Header'
 import HomeSwiper from './components/Swiper'
 import HomeIcons from './components/Icons'
 import HomeTools from './components/SmallTools'
+import HomeActivities from './components/Activities'
 export default {
     name: 'home',
     components: {
         HomeHeader,
         HomeSwiper,
         HomeIcons,
-        HomeTools
+        HomeTools,
+        HomeActivities
     }
 }
 </script>
