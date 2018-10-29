@@ -7,6 +7,7 @@
         <home-activities></home-activities>
         <home-hotmeau></home-hotmeau>
         <home-recommend></home-recommend>
+        <home-weekend></home-weekend>
         <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
         <br /><br /><br /><br />
     </div>
@@ -20,6 +21,7 @@ import HomeTools from './components/SmallTools'
 import HomeActivities from './components/Activities'
 import HomeHotmeau from './components/HotMenu'
 import HomeRecommend from './components/Recommend'
+import HomeWeekend from './components/Weekend'
 export default {
     name: 'home',
     components: {
@@ -29,7 +31,8 @@ export default {
         HomeTools,
         HomeActivities,
         HomeHotmeau,
-        HomeRecommend
+        HomeRecommend,
+        HomeWeekend
     }
 }
 </script>
