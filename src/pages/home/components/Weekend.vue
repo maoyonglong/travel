@@ -6,6 +6,10 @@
             <strong class="scence-name">{{ scence.name }}</strong>
             <p class="scence-desc">{{ scence.desc }}</p>
         </div>
+        <p class="warning">
+            <i class="iconfont warning-icon">&#xe641;</i>
+            票面价是指通过景区指定窗口售卖的纸质门票上标注的价格
+        </p>
     </div>
 </template>
 
@@ -41,14 +45,12 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-    .weekend-wrapper
-        background-color: #fff
     .weekend-title
         padding-left: .26rem
         color: #212121
         line-height: .8rem
-        background-color: #f5f5f5
     .scence-wrapper
+        background-color: #fff  
         .scence-img 
             width: 100%
         .scence-name
@@ -61,8 +63,16 @@ export default {
             font-size: .24rem
             line-height: .24rem
             color: #616161
-            margin-bottom: .4rem
+            padding-bottom: .4rem
         .scence-name, .scence-desc
-            padding-left: .26rem   
-              
+            padding-left: .26rem      
+    .warning
+        padding-left: .24rem
+        margin-top: .2rem
+        background-color: #fff   
+        font-size: .24rem;
+        line-height: .32rem;
+        color: #616161;   
+        .warning-icon
+            font-size: .24rem 
 </style>
