@@ -1,7 +1,7 @@
 <template>
     <div class="weekend-wrapper">
         <h3 class="weekend-title">周末去哪儿</h3>
-        <div class="scence-wrapper" v-for="scence in scences">
+        <div class="scence-wrapper" v-for="scence in list">
             <img class="scence-img" :src="scence.imgUrl" />
             <strong class="scence-name">{{ scence.name }}</strong>
             <p class="scence-desc">{{ scence.desc }}</p>
@@ -16,35 +16,14 @@
 <script>
 export default {
     name: 'HomeWeekend',
-    data: function(){
-        return {
-            scences: [{
-                imgUrl: "http://img1.qunarzz.com/sight/source/1509/bc/50eb743f47cec5.jpg_r_640x214_fa1b0019.jpg",
-                name: "湛江必游TOP5",
-                desc: "中国海军南海舰队司令部所在地，够酷"
-            },{
-                imgUrl: "http://img1.qunarzz.com/sight/source/1509/bc/50eb743f47cec5.jpg_r_640x214_fa1b0019.jpg",
-                name: "湛江必游TOP5",
-                desc: "中国海军南海舰队司令部所在地，够酷"
-            },{
-                imgUrl: "http://img1.qunarzz.com/sight/source/1509/bc/50eb743f47cec5.jpg_r_640x214_fa1b0019.jpg",
-                name: "湛江必游TOP5",
-                desc: "中国海军南海舰队司令部所在地，够酷"
-            },{
-                imgUrl: "http://img1.qunarzz.com/sight/source/1509/bc/50eb743f47cec5.jpg_r_640x214_fa1b0019.jpg",
-                name: "湛江必游TOP5",
-                desc: "中国海军南海舰队司令部所在地，够酷"
-            },{
-                imgUrl: "http://img1.qunarzz.com/sight/source/1509/bc/50eb743f47cec5.jpg_r_640x214_fa1b0019.jpg",
-                name: "湛江必游TOP5",
-                desc: "中国海军南海舰队司令部所在地，够酷"
-            }]
-        };
+    props: {
+        list: Array
     }
 }    
 </script>
 
 <style lang="stylus" scoped>
+    @import "~styles/mixins.styl"
     .weekend-title
         padding-left: .26rem
         color: #212121
@@ -67,12 +46,15 @@ export default {
         .scence-name, .scence-desc
             padding-left: .26rem      
     .warning
-        padding-left: .24rem
-        margin-top: .2rem
+        padding-left: .3rem
+        margin-top: .3rem
+        padding-top: .2rem
+        padding-bottom: .2rem
         background-color: #fff   
-        font-size: .24rem;
-        line-height: .32rem;
-        color: #616161;   
+        font-size: .24rem
+        line-height: .32rem
+        color: #616161  
+        ellipsis()
         .warning-icon
             font-size: .24rem 
 </style>

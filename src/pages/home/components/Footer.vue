@@ -28,7 +28,7 @@
 <script>
 export default{
     name: 'HomeFooter',
-    data: function(){
+    data(){
         return {
             icons: [
                 {
@@ -87,16 +87,16 @@ export default{
         };
     },
     methods: {
-        getBgPos: function(pos){
+        getBgPos(pos){
             return pos[0] + 'px ' + pos[1] + 'px'
         },
-        handleSeeMoreClick: function(){
+        handleSeeMoreClick(){
             this.isSeeMore = !this.isSeeMore
         },
-        getSeeMoreIcon: function(){
+        getSeeMoreIcon(){
             return this.isSeeMore ? '&#xe69b;' : '&#xe601'
         }
-    },
+    }
 }
 </script>
 

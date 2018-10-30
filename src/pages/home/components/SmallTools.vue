@@ -21,7 +21,6 @@ export default {
     .tools-wrapper
         display: flex
         background: #fff
-        margin-top: .1rem
         margin-bottom: .3rem
         .tool
             flex: 1

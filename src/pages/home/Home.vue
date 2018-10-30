@@ -1,14 +1,14 @@
 <template>
     <div class="page">
-        <home-header></home-header>
-        <home-swiper></home-swiper>
-        <home-icons></home-icons>
+        <home-header :city="city"></home-header>
+        <home-swiper :list="swiperList"></home-swiper>
+        <home-icons :list="iconList"></home-icons>
         <home-tools></home-tools>
         <home-activities></home-activities>
-        <home-hotmeau></home-hotmeau>
-        <home-recommend></home-recommend>
+        <home-hotmenu :list="hotmenuList"></home-hotmenu>
+        <home-recommend :lists="recommendList"></home-recommend>
+        <home-weekend :list="weekendList"></home-weekend>
         <home-footer></home-footer>
-        <home-weekend></home-weekend>
     </div>
 </template>
 
@@ -18,10 +18,11 @@ import HomeSwiper from './components/Swiper'
 import HomeIcons from './components/Icons'
 import HomeTools from './components/SmallTools'
 import HomeActivities from './components/Activities'
-import HomeHotmeau from './components/HotMenu'
+import HomeHotmenu from './components/HotMenu'
 import HomeRecommend from './components/Recommend'
 import HomeFooter from './components/Footer'
 import HomeWeekend from './components/Weekend'
+import axios from 'axios'
 export default {
     name: 'home',
     components: {
@@ -30,10 +31,39 @@ export default {
         HomeIcons,
         HomeTools,
         HomeActivities,
-        HomeHotmeau,
+        HomeHotmenu,
         HomeRecommend,
         HomeFooter,
         HomeWeekend
+    },
+    data(){
+        return {
+            city: '',
+            swiperList: [],
+            iconList: [],
+            hotmenuList: [],
+            recommendList: [],
+            weekendList: []
+        }
+    },
+    methods: {
+        getHomeInfo(){
+            axios.get('/api/index.json').then((res) => {
+                res = res.data;
+                const data = res.data;
+                if(res.ret==='success' && data){
+                    this.city = data.city;
+                    this.swiperList = data.swiperList;
+                    this.iconList = data.iconList;
+                    this.hotmenuList = data.hotmenuList;
+                    this.recommendList = data.recommendList;
+                    this.weekendList = data.weekendList;
+                }
+            });
+        }
+    },
+    mounted(){
+        this.getHomeInfo();
     }
 }
 </script>

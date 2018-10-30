@@ -5,9 +5,9 @@
             猜你喜欢
         </h2>
         <ul class="recommend-list-wrapper">
-            <li class="recommend-list" v-for="list in lists">
+            <li class="recommend-list" v-for="(list, index) in lists" :key="index">
                 <ul class="recommend-item-wrapper">
-                    <li class="recommend-item clearfix" v-for="item in list">
+                    <li class="recommend-item clearfix" v-for="item in list" :key="item.id">
                         <div class="img-wrapper">
                             <div class="tag" v-if="item.tagKind >= 0" :style="{backgroundImage: getTagUrl(item.tagKind)}">{{ getTagText(item.tagKind) }}</div>
                             <img :src="item.imgUrl"/>
@@ -43,7 +43,10 @@
 <script>
 export default {
     name: 'HomeRecommend',
-    data: function(){
+    props: {
+        lists: Array
+    },
+    data(){
         return {
             tags: [
                 {
@@ -59,67 +62,13 @@ export default {
                     text: "可定今日"
                 }
             ],
-            lists: [
-                [{
-                    imgUrl: "http://img1.qunarzz.com/sight/p0/201212/19/3320e43ab4b9cb0493835fbb.jpg_200x200_f88f3a4f.jpg",
-                    address: "特呈渔岛度假村",
-                    price: 39.8,
-                    area: "霞山区",
-                    tagKind: 0
-                },{
-                    imgUrl: "http://img1.qunarzz.com/sight/p0/201212/19/3320e43ab4b9cb0493835fbb.jpg_200x200_f88f3a4f.jpg",
-                    address: "特呈渔岛度假村",
-                    price: 39.8,
-                    area: "霞山区",
-                    tagKind: 1
-                },{
-                    imgUrl: "http://img1.qunarzz.com/sight/p0/201212/19/3320e43ab4b9cb0493835fbb.jpg_200x200_f88f3a4f.jpg",
-                    address: "特呈渔岛度假村",
-                    price: 39.8,
-                    area: "霞山区",
-                    tagKind: 0
-                }],
-                [{
-                    imgUrl: "http://img1.qunarzz.com/sight/p0/201212/19/3320e43ab4b9cb0493835fbb.jpg_200x200_f88f3a4f.jpg",
-                    address: "特呈渔岛度假村",
-                    price: 39.8,
-                    area: "霞山区"
-                },{
-                    imgUrl: "http://img1.qunarzz.com/sight/p0/201212/19/3320e43ab4b9cb0493835fbb.jpg_200x200_f88f3a4f.jpg",
-                    address: "特呈渔岛度假村",
-                    price: 39.8,
-                    area: "霞山区"
-                },{
-                    imgUrl: "http://img1.qunarzz.com/sight/p0/201212/19/3320e43ab4b9cb0493835fbb.jpg_200x200_f88f3a4f.jpg",
-                    address: "特呈渔岛度假村",
-                    price: 39.8,
-                    area: "霞山区",
-                    tagKind: 2
-                }],
-                [{
-                    imgUrl: "http://img1.qunarzz.com/sight/p0/201212/19/3320e43ab4b9cb0493835fbb.jpg_200x200_f88f3a4f.jpg",
-                    address: "特呈渔岛度假村",
-                    price: 39.8,
-                    area: "霞山区"
-                },{
-                    imgUrl: "http://img1.qunarzz.com/sight/p0/201212/19/3320e43ab4b9cb0493835fbb.jpg_200x200_f88f3a4f.jpg",
-                    address: "特呈渔岛度假村",
-                    price: 39.8,
-                    area: "霞山区"
-                },{
-                    imgUrl: "http://img1.qunarzz.com/sight/p0/201212/19/3320e43ab4b9cb0493835fbb.jpg_200x200_f88f3a4f.jpg",
-                    address: "特呈渔岛度假村",
-                    price: 39.8,
-                    area: "霞山区"
-                }]
-            ]
         };
     },
     methods: {
-        getTagUrl: function(kind){
+        getTagUrl(kind){
             return 'url(' + this.tags[kind].imgUrl + ')';
         },
-        getTagText: function(kind){
+        getTagText(kind){
             return this.tags[kind].text;
         }
     }

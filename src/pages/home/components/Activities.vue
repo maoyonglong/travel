@@ -11,7 +11,7 @@
 <script>
 export default {
     name: 'HomeActivities',
-    data: function(){
+    data(){
         return {
             list: [{
                 id: "0001",
@@ -23,7 +23,7 @@ export default {
         };
     },
     methods: {
-        getImageUrl: function(url){
+        getImageUrl(url){
             return 'url(' + url + ')';
         }
     }

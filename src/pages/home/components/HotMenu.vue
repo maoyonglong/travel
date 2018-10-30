@@ -29,49 +29,16 @@
 <script>
 export default {
     name: 'HomeHotmenu',
-    data: function(){
+    props: {
+        list: Array
+    },
+    data(){
         return {
             tops: [
                 "http://img1.qunarzz.com/piao/fusion/1710/ab/159673b63e6ca702.png",
                 "http://img1.qunarzz.com/piao/fusion/1710/2d/36d0c4adaebbbc02.png",
                 "http://img1.qunarzz.com/piao/fusion/1710/67/edc47ffef9e96b02.png"
-            ],
-            list: [{
-                id: "0001",
-                imgUrl: "http://img1.qunarzz.com/sight/p0/1701/d7/d79ce098933ceeaa3.water.jpg_250x250_5e726ef2.jpg",
-                address: "乐8小城湛江店",
-                price: 27
-            },{
-                 id: "0002",
-                imgUrl: "http://img1.qunarzz.com/sight/p0/1701/d7/d79ce098933ceeaa3.water.jpg_250x250_5e726ef2.jpg",
-                address: "乐8小城湛江店",
-                price: 27
-            },{
-                 id: "0003",
-                imgUrl: "http://img1.qunarzz.com/sight/p0/1701/d7/d79ce098933ceeaa3.water.jpg_250x250_5e726ef2.jpg",
-                address: "乐8小城湛江店",
-                price: 27
-            },{
-                 id: "0004",
-                imgUrl: "http://img1.qunarzz.com/sight/p0/1701/d7/d79ce098933ceeaa3.water.jpg_250x250_5e726ef2.jpg",
-                address: "乐8小城湛江店",
-                price: 27
-            },{
-                id: "0005",
-                imgUrl: "http://img1.qunarzz.com/sight/p0/1701/d7/d79ce098933ceeaa3.water.jpg_250x250_5e726ef2.jpg",
-                address: "乐8小城湛江店",
-                price: 27
-            },{
-                id: "0006",
-                imgUrl: "http://img1.qunarzz.com/sight/p0/1701/d7/d79ce098933ceeaa3.water.jpg_250x250_5e726ef2.jpg",
-                address: "乐8小城湛江店",
-                price: 27
-            },{
-                id: "0007",
-                imgUrl: "http://img1.qunarzz.com/sight/p0/1701/d7/d79ce098933ceeaa3.water.jpg_250x250_5e726ef2.jpg",
-                address: "乐8小城湛江店",
-                price: 27
-            }]
+            ]
         };
     }
 }    
