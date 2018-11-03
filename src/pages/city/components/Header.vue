@@ -38,6 +38,9 @@
     @import '~styles/variables.styl';
     .city-header
         background-color: $bgColor
+        position: fixed;
+        z-index: 999;
+        width: 100%;
         .title
             color: #fff
             line-height: .88rem
