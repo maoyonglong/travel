@@ -1,7 +1,9 @@
 <template>
     <header class="city-header">
         <h2 class="title">
-            <i class="iconfont icon">&#xe624;</i>
+            <router-link to = '/'>
+                <i class="iconfont icon">&#xe624;</i>
+            </router-link>
             <span class="select-city">城市选择</span>
         </h2>
         <div class="switch-area-wrapper">
@@ -49,6 +51,7 @@
             .icon
                 position: absolute
                 margin-left: .4rem
+                color: #fff
             .select-city
                 display: block
                 text-align: center

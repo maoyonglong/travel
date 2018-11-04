@@ -9,7 +9,7 @@
         </div>
         <div class="header-right">
             <router-link to='/city' style="color: #fff;">
-                {{ city }}
+                {{ getCurCity() }}
             </router-link>
             <i class="iconfont">&#xe62d;</i>
         </div>
@@ -21,11 +21,17 @@ export default {
     name: 'HomeHeader',
     props: {
         city: String
+    },
+    methods: {
+        getCurCity(){
+            return this.$store.state.curCity;
+        }
     }
 }
 </script>
 
 <style lang="stylus" scoped>
+    @import '~styles/mixins.styl'
     @import '~styles/variables.styl'
     .header
         display: flex
@@ -46,7 +52,13 @@ export default {
             color: #ccc
             padding-left: .1rem
         .header-right
-            width: 1.24rem;
+            width: 1.24rem
             float: right
             text-align: center
+            a, i
+                display: inline-block
+                vertical-align: middle
+            a
+                width: 0.6rem
+                ellipsis()
 </style>

@@ -3,7 +3,13 @@
         <div class="menu-panel" 
             v-for="(rowItems, index) in rowList"
         >
-            <a class="menu-panel-optn" v-for="item in rowItems" :key="item.id">{{ item.name }}</a>
+            <a class="menu-panel-optn"
+                v-for="item in rowItems"
+                :key="item.id"
+                @click="selectCity(item.name)"
+            >
+                {{ item.name }}
+            </a>
         </div>
     </div>  
 </template>
@@ -45,6 +51,15 @@ export default {
                 }
             }
             return result;
+        }
+    },
+    methods: {
+        selectCity(name){
+            this.$store.dispatch({
+                type: 'selectCity',
+                value: name
+            });
+            this.$router.push('/')
         }
     }
 }   
