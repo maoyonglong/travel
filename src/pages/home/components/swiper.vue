@@ -6,7 +6,7 @@
                 <img :src="item.imgUrl" :alt="item.alt"/> 
             </swiper-slide>
             <!-- Optional controls -->
-            <div class="swiper-pagination"  slot="pagination"></div>
+            <div class="swiper-pagination" slot="pagination"></div>
         </swiper> 
     </div>  
 </template>
@@ -28,7 +28,8 @@ export default {
     computed: {
         showSwiper(){
             return this.list.length;
-        }
+        },
+        close
     }
 }
 </script>
